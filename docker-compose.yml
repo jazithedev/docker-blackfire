@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+    blackfire:
+        environment:
+            BLACKFIRE_SERVER_ID: ${BLACKFIRE_SERVER_ID}
+            BLACKFIRE_SERVER_TOKEN: ${BLACKFIRE_SERVER_TOKEN}
+            BLACKFIRE_CLIENT_ID: ${BLACKFIRE_CLIENT_ID}
+            BLACKFIRE_CLIENT_TOKEN: ${BLACKFIRE_CLIENT_TOKEN}
+        build:
+            context: server
+        volumes:
+            - "./www:/srv/www"
+        tty: true
+        ports:
+            - 80:80
